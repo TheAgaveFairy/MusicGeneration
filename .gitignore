@@ -1,6 +1,7 @@
 *.wav
 midi_text_data.txt
 entire_midi_data.csv
+.~*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
