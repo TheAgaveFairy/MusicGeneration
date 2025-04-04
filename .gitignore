@@ -3,6 +3,10 @@ midi_text_data.txt
 entire_midi_data.csv
 .~*
 
+classicalmidi/
+imsparsh_og/
+musicnet_midis/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
