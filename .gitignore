@@ -2,10 +2,13 @@
 midi_text_data.txt
 entire_midi_data.csv
 .~*
+*.lock
 
-classicalmidi/
-imsparsh_og/
-musicnet_midis/
+inputs/
+logs/
+musicgen-outputs/
+gpt2-midi/
+gameemo-images
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
