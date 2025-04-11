@@ -4,6 +4,7 @@ entire_midi_data.csv
 .~*
 *.lock
 
+modeloutput/
 inputs/
 logs/
 musicgen-outputs/
