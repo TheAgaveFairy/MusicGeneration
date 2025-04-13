@@ -5,7 +5,8 @@ entire_midi_data.csv
 *.lock
 
 modeloutput/
-inputs/
+inputs/*
+final/
 logs/
 musicgen-outputs/
 gpt2-midi/
