@@ -3,6 +3,7 @@ midi_text_data.txt
 entire_midi_data.csv
 .~*
 *.lock
+cached_*.txt
 
 modeloutput/
 inputs/*
