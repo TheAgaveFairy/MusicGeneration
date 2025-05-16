@@ -1,6 +1,8 @@
 # MusicGeneration
 Exploring models for music generation, eventually with the goal of the model responding to EEG signals to bring about relaxation. We use a transformer to generate tokenized music, and classify EEG signals for the eventual feedback loop.
 
+The main files to look at are the "midi dataset combiner ABC format", "eeg\_classification", and "gpt2\_finetune".
+
 ## Inputs:
 We want something lighter than PCM representations of music (MP3, WAV, FLAC), so we're looking namely at MIDI files. There are a couple of ways to extract information from these files that we focused on; a custom syntax could be generated like ABC if needed.
 
