@@ -1,8 +1,8 @@
 # MusicGeneration
-exploring models for music generation. pretty_midi takes midi files and we convert to either a csv representation or the "ABC" standard to feed into GPT-2 for fine tuning on our task
+Exploring models for music generation, eventually with the goal of the model responding to EEG signals to bring about relaxation. We use a transformer to generate tokenized music, and classify EEG signals for the eventual feedback loop.
 
 ## Inputs:
-I used MusicNet and a dataset of free piano music. If you can find more, that probably will never hurt.
+We want something lighter than PCM representations of music (MP3, WAV, FLAC), so we're looking namely at MIDI files. There are a couple of ways to extract information from these files that we focused on; a custom syntax could be generated like ABC if needed.
 
 ### Midi to CSV through Pandas DF
 Input datasets get loaded into pretty_midi, and "rows" of desired data are extracted. This is saved in .csv, or manipulated as Pandas DataFrames. Outputs are sent to the desired folder to be loaded by our model and further processed for feeding into the GPT-2 tokenizer / model.
@@ -13,10 +13,10 @@ My peer found a standard called "ABC" for representing music that has some advan
 While Pandas offered a nice API for quickly representing, augmenting, and handling data, this must now all be done from within the midi format via pretty_midi. I regret not doing this from the beginning, but I was less familiar with the API and midi format so it was easier to do in my own extracted version.
 
 ## Model
-A simple GPT-2 from HuggingFace is employed. Implementations are available in C, if needed. It's a powerful model for its small size and a good architecture for our problem.
+A simple GPT-2 from HuggingFace is employed. Implementations are available in C of this famous architecture, if needed by some follow-up work. It's a powerful model for its small size and a good architecture for our problem.
 
 ### Custom Tokenizer
-We played around with a custom tokenizer for another class, with a vocabulary size of 600, 1200, and 3000. Since the ABC notation is small, 600 was the best. The only thing outside of that spec is any title label, e.g. "X: Debussy - Claire de Lune". I'm not sure how to best handle that.
+We played around with a custom tokenizer for another class, with a vocabulary size of 600, 1200, and 3000. Since the ABC notation is small, 600 was the best. The only thing outside of that spec is any title label, e.g. "X: Debussy - Claire de Lune". I'm not sure how to best handle that. These results are not in this GitHub and wouldn't help anyways as they were trained for BERT. The point being, it should be easy to train a custom tokenizer and I think it's probably worthwhile.
 
 ## Data
 We want the model to generate some notation / tokenization of music. MIDI as ABC (or make your own more compact version of ABC) is a great thing. Then the model can generate ABC, which we convert to MIDI, then synthesize to .WAV or some other PCM format.
@@ -37,3 +37,5 @@ https://www.kaggle.com/datasets/sigfest/database-for-emotion-recognition-system-
 https://www.kaggle.com/datasets/soumikrakshit/classical-music-midi 
 https://www.kaggle.com/datasets/imsparsh/musicnet-dataset 
 https://github.com/lucasnfe/vgmidi - there's TONS of video game MIDI content out there. video game music is typically stressful though, according to a few papers. this seems to pull from some database I can't figure out
+
+GET AS MUCH AS YOU CAN, IMHO!
